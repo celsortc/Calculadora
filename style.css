@@ -8,24 +8,27 @@ h1 {
   margin: 40px;
 }
 
-.resultado {
+#resultado,
+#resultadoTemp {
   text-align: right;
   padding: 10px 20px;
   margin: 10px;
   font-size: 2rem;
-  background-color: black;
+  background-color: rgb(46, 46, 46);
   color: white;
   border-radius: 4px;
+  height: 40px;
 }
 
 .calculadora-container {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  height: 400px;
-  width: 300px;
+  height: 100%;
+  width: 250px;
   margin: 0 auto;
   border-radius: 4px;
+  background-color: black;
 }
 
 .calculadora {
@@ -36,22 +39,27 @@ h1 {
   gap: 5px;
   border: 1px solid red;
   height: 200px;
+  align-items: stretch;
 }
 
 .botao {
-  flex: 1 1 calc(25% - 5px);
-  /* max-height: 50px; */
-  /* min-width: 120px; */
+  /* a solução que achei pra imagem parar de crescer o conteúdo como um todo, foi definir um height e colocar o basis com 20% para que fique em 4 coluna */
+  flex: 1 1 20%;
+  height: 4rem;
+  border-radius: 4px;
+  border: 0px;
+}
+.botao:hover {
+  background-color: #92a5da;
+  color: white;
+  cursor: pointer;
 }
 
-/* .imagem-botao {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .imagem {
-  max-width: 20px;
-  max-height: 20px;
-  object-fit: cover;
+  width: 25px;
+  height: 25px;
+}
+
+/* .igual {
+  flex: 2 1 calc(40% + 5px);
 } */
-/* to tentando solucionar o problema da imagem, que sempre que eu adiciono ela, ela está forçando o height da primeira coluna de botões, ainda não achei a solução.. */
