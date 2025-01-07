@@ -1,0 +1,5 @@
+informações para refinar a calculadora quando finalizada
+
+a calculadora não tem um fluxo bom, por exemplo, se eu aperto 6 - 1, e em seguida quero realizar +2, ele em vez de fazer: 6 - 1 e depois o +2, 
+ele faz o +2 e pula a subtração, preciso corrigir isso.
+

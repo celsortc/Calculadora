@@ -2,14 +2,11 @@ let resultado = document.getElementById("resultado");
 const botao = document.querySelectorAll(".botao");
 
 let primeiroCalculo = true;
-let novaOperacao = false;
-// let digitouNumero = false; // variavel que verifica se um número foi digitado, para evitar que faça calculos apenas apertando as operações.
+let novaOperacao = false; // para verificar se o número que foi digitado foi pressionado depois de uma operação de soma, subtração, etc..
+let digitouNumero = false; // variavel que verifica se um número foi digitado, para evitar que faça calculos apenas apertando as operações.
+let operadorAtual = null;
 let total = 0;
 let totalTemp = 0;
-
-// let resultadotemp = 0;
-// let novaOperacao = false;
-// let numeroDigitado = false;
 
 function adicionarNumero(textoBotao) {
   if (primeiroCalculo === true || novaOperacao === true) {
@@ -44,19 +41,28 @@ function botaoPressionado(event) {
   } else if (textoBotao === "somar") {
     // se botão clicado for + "somar"
     if (digitouNumero === true) {
-      novaOperacao = true;
-      total = adicao(totalTemp); // chama a função que vai somar
-      resultado.innerHTML = total;
-      console.log(total);
-      digitouNumero = false; //retorna a variável para false, podendo ser refeitos os calculos.
+      total = adicao(); // chama a função que vai somar
+      resultado.innerHTML = total.toString().replace(".", ","); // seta no próprio resultado o valor do total, já formatado no padrão númerico do brasil.
     }
   }
 }
 
-function adicao(totalTemp) {
-  totalTemp = parseFloat(resultado.innerHTML.replace(",", ".")); // passa o valor do resultado para a variavel totalTemp, já convertido em float e substituindo , por .
+// function subtracao(totalTemp, num2) {
+//   operadorAtual = null;
+//   return totalTemp - num2;
+// }
 
-  return total + totalTemp;
+function adicao() {
+  totalTemp = parseFloat(resultado.innerHTML.replace(",", ".")); // passa o valor do resultado para a variavel totalTemp, já convertido em float e substituindo , por .
+  novaOperacao = true;
+  digitouNumero = false; //retorna a variável para false, podendo ser refeitos os calculos.
+
+  if ((total + totalTemp).toString().length <= 12) {
+    //verifica se a soma dos dois números for maior que 12, se for não soma, 12 pq é o escopo máximo (por enquanto)
+    return total + totalTemp;
+  } else {
+    return total;
+  }
 }
 
 function limpaTudo() {
@@ -65,6 +71,8 @@ function limpaTudo() {
   novaOperacao = false;
   totalTemp = 0;
   total = 0;
+  num2 = 0;
+  operadorAtual = null;
 }
 
 function clicou(teste) {
