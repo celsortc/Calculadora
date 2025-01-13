@@ -5,8 +5,9 @@ let primeiroCalculo = true;
 let novaOperacao = false; // para verificar se o número que foi digitado foi pressionado depois de uma operação de soma, subtração, etc..
 let digitouNumero = false; // variavel que verifica se um número foi digitado, para evitar que faça calculos apenas apertando as operações.
 let operadorAtual = null;
-let total = 0;
+let total = null;
 let totalTemp = 0;
+let num1 = 0;
 
 function adicionarNumero(textoBotao) {
   if (primeiroCalculo === true || novaOperacao === true) {
@@ -44,13 +45,26 @@ function botaoPressionado(event) {
       total = adicao(); // chama a função que vai somar
       resultado.innerHTML = total.toString().replace(".", ","); // seta no próprio resultado o valor do total, já formatado no padrão númerico do brasil.
     }
+  } else if (textoBotao === "subtrair") {
+    num2 = parseFloat(resultado.innerHTML.replace(",", "."));
+    if (total === null) {
+      total = num2;
+      console.log(total, num1, num2);
+      novaOperacao = true;
+      digitouNumero = false;
+      return;
+    }
+    console.log(total, num1, num2);
+
+    resultado.innerHTML = total - num2;
+    total = resultado.innerHTML;
+    console.log(total, num1, num2);
+    novaOperacao = true;
+    digitouNumero = false;
   }
 }
 
-// function subtracao(totalTemp, num2) {
-//   operadorAtual = null;
-//   return totalTemp - num2;
-// }
+//
 
 function adicao() {
   totalTemp = parseFloat(resultado.innerHTML.replace(",", ".")); // passa o valor do resultado para a variavel totalTemp, já convertido em float e substituindo , por .
