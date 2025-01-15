@@ -58,15 +58,28 @@ function verificaOperacao(textoBotao) {
     limpaTudo();
   } else if (textoBotao === "somar") {
     operador = "adicao";
-    console.log("voltou", total);
     if (total === null) {
       total = parseFloat(resultado.innerHTML.replace(",", ".")); //entrega na variavel total o número já em float, e formatado substituindo a virgula por ponto, que é o padrão dos calculos do JS
-      console.log(total);
       limparTela = true;
       return;
+    } else {
+      calculos(operador, total, num2);
+      total = parseFloat(resultado.innerHTML.replace(",", "."));
     }
-    calculos();
   }
 }
 
-function calculos(textoBotao) {}
+function calculos(operador, total, num2) {
+  num2 = parseFloat(resultado.innerHTML.replace(",", ".")); // recebe segundo número digitado
+  console.log(total, num2, operador, resultado.innerHTML);
+
+  if (operador === "adicao") {
+    total += num2;
+    console.log(total, num2, operador, resultado.innerHTML);
+
+    num2 = 0;
+    operador = null;
+    resultado.innerHTML = total.toString().replace(".", ",");
+    limparTela = true;
+  }
+}
