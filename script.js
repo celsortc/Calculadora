@@ -6,6 +6,7 @@ let num2 = 0; // auxiliar das somas
 let primeiroCalculo = true; //verifica se é o primeiro número a ser adicionado, para não somar com o 0 ex: "05"
 let operador = null;
 let limparTela = false; // flag para limpar tela após salvar número
+let operacaoAtiva = false; // variavel criada, com intuito de nao permitir calcular infinitamente apenas apertando o botão de soma, subtracao, etc..
 
 botao.forEach(clicou);
 
@@ -23,6 +24,7 @@ function clicou(teste) {
 }
 
 function exibeNumero(textoBotao) {
+  operacaoAtiva = false; // desativa  essa flag, para permitir o clique em uma nova operacao
   if (primeiroCalculo === true) {
     //condicional pra verificar se é o primeiro calculo depois da calculadora resetada, soluciona o problema de somar os numeros ao 0;
     resultado.innerHTML = textoBotao;
@@ -73,7 +75,7 @@ function calculos(operador, total, num2) {
   num2 = parseFloat(resultado.innerHTML.replace(",", ".")); // recebe segundo número digitado
   console.log(total, num2, operador, resultado.innerHTML);
 
-  if (operador === "adicao") {
+  if (operador === "adicao" && operacaoAtiva === false) {
     total += num2;
     console.log(total, num2, operador, resultado.innerHTML);
 
@@ -81,5 +83,6 @@ function calculos(operador, total, num2) {
     operador = null;
     resultado.innerHTML = total.toString().replace(".", ",");
     limparTela = true;
+    operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   }
 }

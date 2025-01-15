@@ -8,8 +8,10 @@ let operadorAtual = null;
 let total = null;
 let totalTemp = 0;
 let num1 = 0;
+let operacaoAtiva = false; // variavel criada, com intuito de nao permitir calcular infinitamente apenas apertando o botão de soma, subtracao, etc..
 
 function adicionarNumero(textoBotao) {
+  operacaoAtiva = false;
   if (primeiroCalculo === true || novaOperacao === true) {
     //testa se é o primeiro calculo
     resultado.innerHTML = textoBotao;
