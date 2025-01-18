@@ -17,6 +17,12 @@ function limpaTudo() {
   primeiroCalculo = true;
   console.log("resetou");
   operador = null;
+  operacaoAtiva = false;
+  limparTela = false;
+}
+
+function LimpaTela() {
+  resultado.innerHTML = "0";
 }
 
 function clicou(teste) {
@@ -58,6 +64,8 @@ function verificaBotao(event) {
 function verificaOperacao(textoBotao) {
   if (textoBotao === "C") {
     limpaTudo();
+  } else if (textoBotao === "CE") {
+    LimpaTela();
   } else if (textoBotao === "somar") {
     operador = "adicao";
     if (total === null) {
@@ -78,7 +86,38 @@ function verificaOperacao(textoBotao) {
       calculos(operador, total, num2);
       total = parseFloat(resultado.innerHTML.replace(",", "."));
     }
+  } else if (textoBotao === "multiplicar") {
+    operador = "multiplicacao";
+    if (total === null) {
+      total = parseFloat(resultado.innerHTML.replace(",", ".")); //entrega na variavel total o número já em float, e formatado substituindo a virgula por ponto, que é o padrão dos calculos do JS
+      limparTela = true;
+      return;
+    } else {
+      calculos(operador, total, num2);
+      total = parseFloat(resultado.innerHTML.replace(",", "."));
+    }
+  } else if (textoBotao === "dividir") {
+    operador = "divisao";
+    if (total === null) {
+      total = parseFloat(resultado.innerHTML.replace(",", ".")); //entrega na variavel total o número já em float, e formatado substituindo a virgula por ponto, que é o padrão dos calculos do JS
+      limparTela = true;
+      return;
+    } else {
+      calculos(operador, total, num2);
+      total = parseFloat(resultado.innerHTML.replace(",", "."));
+    }
+  } else if (textoBotao === "%") {
+    resultado.innerHTML = porcentagem(); // redefine valor da tela, com a porcentagem do número que está na tela com base no total
   }
+}
+
+function porcentagem() {
+  let numeroTela = parseFloat(resultado.innerHTML.replace(",", "."));
+  let calculoPorcento = numeroTela / total; // retorna o valor decimal do numero da tela / total.
+  // if(numeroTela.toString.length >)
+  numeroTela *= calculoPorcento; // valor decimal do numero da tela / valor decimal do calculo acima
+
+  return numeroTela.toFixed(2); // limita em 2 digitos decimais pós virgula
 }
 
 function calculos(operador, total, num2) {
@@ -96,6 +135,29 @@ function calculos(operador, total, num2) {
     operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   } else if (operador === "subtracao" && operacaoAtiva === false) {
     total -= num2;
+    console.log(total, num2, operador, resultado.innerHTML);
+
+    num2 = 0;
+    operador = null;
+    resultado.innerHTML = total.toString().replace(".", ",");
+    limparTela = true;
+    operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
+  }
+  //multiplicacao
+  else if (operador === "multiplicacao" && operacaoAtiva === false) {
+    total *= num2;
+    console.log(total, num2, operador, resultado.innerHTML);
+
+    num2 = 0;
+    operador = null;
+    resultado.innerHTML = total.toString().replace(".", ",");
+    limparTela = true;
+    operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
+  }
+
+  // divisao
+  else if (operador === "divisao" && operacaoAtiva === false) {
+    total /= num2;
     console.log(total, num2, operador, resultado.innerHTML);
 
     num2 = 0;
