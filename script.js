@@ -112,12 +112,24 @@ function verificaOperacao(textoBotao) {
 }
 
 function porcentagem() {
+  // funcao completa, se for adicao/sub devolve o valor numérico da porcentagem, se for divisao/multi devolve a fracao
   let numeroTela = parseFloat(resultado.innerHTML.replace(",", "."));
-  let calculoPorcento = numeroTela / total; // retorna o valor decimal do numero da tela / total.
-  // if(numeroTela.toString.length >)
-  numeroTela *= calculoPorcento; // valor decimal do numero da tela / valor decimal do calculo acima
+  let numeroPorcentagem;
+  if (total !== null) {
+    // alterar pra diferente dps
+    if (operador === "adicao" || operador === "subtracao") {
+      numeroPorcentagem = (numeroTela / total).toFixed(2) * total;
+      console.log(totalFormatado(numeroPorcentagem));
 
-  return numeroTela.toFixed(2); // limita em 2 digitos decimais pós virgula
+      return totalFormatado(numeroPorcentagem); // limita em 2 digitos decimais pós virgula
+    } else if (operador === "divisao" || operador === "multiplicacao") {
+      numeroPorcentagem = numeroTela / 100;
+      console.log(totalFormatado(numeroPorcentagem));
+      return totalFormatado(numeroPorcentagem);
+    }
+    // numeroPorcentagem = 0;
+    // numeroTela = 0;
+  } else return resultado.innerHTML;
 }
 
 function calculos(operador, total, num2) {
@@ -130,7 +142,7 @@ function calculos(operador, total, num2) {
 
     num2 = 0;
     operador = null;
-    resultado.innerHTML = total.toString().replace(".", ",");
+    resultado.innerHTML = totalFormatado(total);
     limparTela = true;
     operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   } else if (operador === "subtracao" && operacaoAtiva === false) {
@@ -139,7 +151,7 @@ function calculos(operador, total, num2) {
 
     num2 = 0;
     operador = null;
-    resultado.innerHTML = total.toString().replace(".", ",");
+    resultado.innerHTML = totalFormatado(total);
     limparTela = true;
     operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   }
@@ -150,7 +162,7 @@ function calculos(operador, total, num2) {
 
     num2 = 0;
     operador = null;
-    resultado.innerHTML = total.toString().replace(".", ",");
+    resultado.innerHTML = totalFormatado(total);
     limparTela = true;
     operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   }
@@ -162,8 +174,15 @@ function calculos(operador, total, num2) {
 
     num2 = 0;
     operador = null;
-    resultado.innerHTML = total.toString().replace(".", ",");
+    resultado.innerHTML = totalFormatado(total);
+    console.log(resultado.innerHTML);
     limparTela = true;
     operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   }
+}
+
+function totalFormatado(total) {
+  // serve somente pra formatar, evita repeticao de código e simplifica alguns processos.
+  console.log("total", total);
+  return total.toFixed(2).toString().replace(".", ",");
 }
