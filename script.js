@@ -68,6 +68,16 @@ function verificaOperacao(textoBotao) {
       calculos(operador, total, num2);
       total = parseFloat(resultado.innerHTML.replace(",", "."));
     }
+  } else if (textoBotao === "subtrair") {
+    operador = "subtracao";
+    if (total === null) {
+      total = parseFloat(resultado.innerHTML.replace(",", ".")); //entrega na variavel total o número já em float, e formatado substituindo a virgula por ponto, que é o padrão dos calculos do JS
+      limparTela = true;
+      return;
+    } else {
+      calculos(operador, total, num2);
+      total = parseFloat(resultado.innerHTML.replace(",", "."));
+    }
   }
 }
 
@@ -77,6 +87,15 @@ function calculos(operador, total, num2) {
 
   if (operador === "adicao" && operacaoAtiva === false) {
     total += num2;
+    console.log(total, num2, operador, resultado.innerHTML);
+
+    num2 = 0;
+    operador = null;
+    resultado.innerHTML = total.toString().replace(".", ",");
+    limparTela = true;
+    operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
+  } else if (operador === "subtracao" && operacaoAtiva === false) {
+    total -= num2;
     console.log(total, num2, operador, resultado.innerHTML);
 
     num2 = 0;
