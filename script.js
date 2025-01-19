@@ -21,7 +21,7 @@ function limpaTudo() {
   limparTela = false;
 }
 
-function LimpaTela() {
+function LimpaTela(textoBotao) {
   resultado.innerHTML = "0";
 }
 
@@ -65,7 +65,7 @@ function verificaOperacao(textoBotao) {
   if (textoBotao === "C") {
     limpaTudo();
   } else if (textoBotao === "CE") {
-    LimpaTela();
+    LimpaTela(textoBotao);
   } else if (textoBotao === "somar") {
     operador = "adicao";
     if (total === null) {
@@ -139,10 +139,9 @@ function calculos(operador, total, num2) {
   if (operador === "adicao" && operacaoAtiva === false) {
     total += num2;
     console.log(total, num2, operador, resultado.innerHTML);
-
     num2 = 0;
     operador = null;
-    resultado.innerHTML = totalFormatado(total);
+    resultado.innerHTML = totalFormatado(total, num2);
     limparTela = true;
     operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   } else if (operador === "subtracao" && operacaoAtiva === false) {
@@ -151,7 +150,7 @@ function calculos(operador, total, num2) {
 
     num2 = 0;
     operador = null;
-    resultado.innerHTML = totalFormatado(total);
+    resultado.innerHTML = totalFormatado(total, num2);
     limparTela = true;
     operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   }
@@ -162,7 +161,7 @@ function calculos(operador, total, num2) {
 
     num2 = 0;
     operador = null;
-    resultado.innerHTML = totalFormatado(total);
+    resultado.innerHTML = totalFormatado(total, num2);
     limparTela = true;
     operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   }
@@ -174,15 +173,26 @@ function calculos(operador, total, num2) {
 
     num2 = 0;
     operador = null;
-    resultado.innerHTML = totalFormatado(total);
+    resultado.innerHTML = totalFormatado(total, num2);
     console.log(resultado.innerHTML);
     limparTela = true;
     operacaoAtiva = true; // ativa novamente essa flag, para permitir a soma somente se um novo número for digitado
   }
 }
 
-function totalFormatado(total) {
+function totalFormatado(total, num2) {
   // serve somente pra formatar, evita repeticao de código e simplifica alguns processos.
-  console.log("total", total);
-  return total.toFixed(2).toString().replace(".", ",");
+  if (verificaFloat(total, num2)) {
+    console.log("entrou aq");
+
+    return total.toFixed(2).toString().replace(".", ",");
+  } else return total.toString().replace(".", ",");
+}
+
+function verificaFloat(total, num2) {
+  if (total % 1 !== 0 || num2 % 1 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
