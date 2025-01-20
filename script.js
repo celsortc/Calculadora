@@ -108,7 +108,17 @@ function verificaOperacao(textoBotao) {
     }
   } else if (textoBotao === "%") {
     resultado.innerHTML = porcentagem(); // redefine valor da tela, com a porcentagem do número que está na tela com base no total
+  } else if (textoBotao === "backspace") {
+    resultado.innerHTML = backspace();
   }
+}
+
+function backspace() {
+  //slice remove o ultimo caractere da string, por isso aqui nao uso parseFloat, condicional basica para testar, se for 1 numero só, retorna 0 para não retornar NaN no próximo calculo
+  let numeroSliced = resultado.innerHTML.replace(",", ".");
+  if (numeroSliced.length === 1) {
+    return 0;
+  } else return numeroSliced.slice(0, -1);
 }
 
 function porcentagem() {
