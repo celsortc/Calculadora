@@ -58,6 +58,7 @@ h1 {
 .imagem {
   width: 25px;
   height: 25px;
+  pointer-events: none;
 }
 
 /* .igual {

@@ -110,15 +110,26 @@ function verificaOperacao(textoBotao) {
     resultado.innerHTML = porcentagem(); // redefine valor da tela, com a porcentagem do número que está na tela com base no total
   } else if (textoBotao === "backspace") {
     resultado.innerHTML = backspace();
+  } else if (textoBotao === "igual") {
+    igual();
   }
+}
+
+function igual() {
+  let totalTemp = parseFloat(resultado.innerHTML.replace(",", "."));
+  console.log(totalTemp);
+
+  calculos(operador, total, totalTemp);
+  return;
 }
 
 function backspace() {
   //slice remove o ultimo caractere da string, por isso aqui nao uso parseFloat, condicional basica para testar, se for 1 numero só, retorna 0 para não retornar NaN no próximo calculo
   let numeroSliced = resultado.innerHTML.replace(",", ".");
   if (numeroSliced.length === 1) {
+    limparTela = true;
     return 0;
-  } else return numeroSliced.slice(0, -1);
+  } else return numeroSliced.slice(0, -1).replace(".", ",");
 }
 
 function porcentagem() {
@@ -193,8 +204,6 @@ function calculos(operador, total, num2) {
 function totalFormatado(total, num2) {
   // serve somente pra formatar, evita repeticao de código e simplifica alguns processos.
   if (verificaFloat(total, num2)) {
-    console.log("entrou aq");
-
     return total.toFixed(2).toString().replace(".", ",");
   } else return total.toString().replace(".", ",");
 }
