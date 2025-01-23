@@ -59,6 +59,7 @@ h1 {
   width: 25px;
   height: 25px;
   pointer-events: none;
+  /* pointer-events faz com que a img pare de conflitar com o botão, quando clicava em cima da imagem, ela entendia o clique na imagem e não no botão, como era pra ser. */
 }
 
 /* .igual {

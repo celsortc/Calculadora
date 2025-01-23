@@ -137,9 +137,8 @@ function porcentagem() {
   let numeroTela = parseFloat(resultado.innerHTML.replace(",", "."));
   let numeroPorcentagem;
   if (total !== null) {
-    // alterar pra diferente dps
     if (operador === "adicao" || operador === "subtracao") {
-      numeroPorcentagem = (numeroTela / total).toFixed(2) * total;
+      numeroPorcentagem = (total * numeroTela).toFixed(2) / 100;
       console.log(totalFormatado(numeroPorcentagem));
 
       return totalFormatado(numeroPorcentagem); // limita em 2 digitos decimais pós virgula
