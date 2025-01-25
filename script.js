@@ -139,12 +139,10 @@ function porcentagem() {
   if (total !== null) {
     if (operador === "adicao" || operador === "subtracao") {
       numeroPorcentagem = (total * numeroTela).toFixed(2) / 100;
-      console.log(totalFormatado(numeroPorcentagem));
 
       return totalFormatado(numeroPorcentagem); // limita em 2 digitos decimais pós virgula
     } else if (operador === "divisao" || operador === "multiplicacao") {
       numeroPorcentagem = numeroTela / 100;
-      console.log(totalFormatado(numeroPorcentagem));
       return totalFormatado(numeroPorcentagem);
     }
     // numeroPorcentagem = 0;
