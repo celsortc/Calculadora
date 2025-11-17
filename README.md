@@ -29,23 +29,13 @@ Este projeto é uma calculadora web moderna, desenvolvida para realizar operaç�
 <ul>
   <li>Operações básicas: soma (+), subtração (-), multiplicação (×) e divisão (÷).</li>
   <li>Suporte a números decimais: permite cálculos com casas decimais com total precisão.</li>
-  <li>
-    Edição da entrada:
-    <ul>
-      <li>Apagar o último dígito inserido;</li>
-      <li>Limpar apenas o cálculo atual;</li>
-      <li>Resetar completamente a memória da calculadora.</li>
-    </ul>
-  </li>
-  <li>
-    Função de porcentagem estilo Calculadora do Windows:<br>
-    Ao realizar operações como <code>100 * 10</code> e pressionar o botão <strong>%</strong>, o segundo operando é automaticamente convertido para seu equivalente percentual decimal (10% = 0,10).<br>
-    Esse comportamento é conhecido como <em>percent operator behavior</em>, o mesmo utilizado em calculadoras profissionais.
-  </li>
+  <li>Apagar o último dígito inserido</li>
+  <li>Limpar apenas o cálculo atual</li>
+  <li>Resetar completamente a memória da calculadora</li>
+  <li>porcentagem semelhante ao da calculadora do Windows</li>
 </ul>
 
-
-<br><br><br>
+<br>
 <p align="center" width="20px">
   Além disso, o código do projeto foi desenvolvido para prevenir ao máximo possíveis erros de entrada por parte do usuário.
 </p>
@@ -57,6 +47,9 @@ Este projeto é uma calculadora web moderna, desenvolvida para realizar operaç�
   <li><strong>CSS</strong></li>
   <li><strong>JavaScript</strong></li>
 </ul>
+
+<br>
+<p align="center"><strong>Link do deploy:</strong> <a href="https://celsortc.github.io/Calculadora/">Clique Aqui</a></p>
 
 </div>
 
