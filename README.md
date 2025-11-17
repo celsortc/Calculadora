@@ -49,7 +49,7 @@ Este projeto é uma calculadora web moderna, desenvolvida para realizar operaç�
 </ul>
 
 <br>
-<p align="center"><strong>Link do deploy:</strong> <a href="https://celsortc.github.io/Calculadora/">Clique Aqui</a></p>
+<p align="center" target="_blank"><strong>Link do deploy:</strong> <a href="https://celsortc.github.io/Calculadora/">Clique Aqui</a></p>
 
 </div>
 
