@@ -3,7 +3,7 @@
 <p align="center">Calculadora Web desenvolvida para solidificar conhecimentos de HTML, CSS e Javascript.</p>
 
 <p align="center">
-  <a href="#-tecnologias-utilizadas">Tecnologias</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias utilizadas">Tecnologias</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>
 </p>
 
