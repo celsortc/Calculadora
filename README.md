@@ -3,7 +3,7 @@
 <p align="center">Calculadora Web desenvolvida para solidificar conhecimentos de HTML, CSS e Javascript.</p>
 
 <p align="center">
-  <a href="#-tecnologias utilizadas">Tecnologias</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>
 </p>
 
@@ -50,11 +50,11 @@ Este projeto é uma calculadora web moderna, desenvolvida para realizar operaç�
   Além disso, o código do projeto foi desenvolvido para prevenir ao máximo possíveis erros de entrada por parte do usuário.
 </p>
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Tecnologias
 
 <ul>
-  <li><strong>HTML5</strong></li>
-  <li><strong>CSS3</strong></li>
+  <li><strong>HTML</strong></li>
+  <li><strong>CSS</strong></li>
   <li><strong>JavaScript</strong></li>
 </ul>
 
