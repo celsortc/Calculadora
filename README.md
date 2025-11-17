@@ -3,11 +3,9 @@
 <p align="center">Calculadora Web desenvolvida para solidificar conhecimentos de HTML, CSS e Javascript.</p>
 
 <p align="center">
-  <a href="#-tecnologias-Utilizadas">Tecnologias</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-  <a href="projeto">Projeto</a>
+  <a href="#-tecnologias">Tecnologias</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>
 </p>
-
-[Ir para Tecnologias](#tecnologias-utilizadas)
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
@@ -23,7 +21,6 @@
 Este projeto é uma calculadora web moderna, desenvolvida para realizar operações matemáticas básicas com uma interface intuitiva e responsiva. Além de entregar uma lógica de cálculo precisa, o projeto também foca em boas práticas de UX e UI, mantendo uma experiência clara e agradável para o usuário.
 </p>
 
-<h2 id="#-projeto">💻 Projeto</h2>
 ## 💻 Projeto
 <p>
 Este projeto é uma calculadora web moderna, desenvolvida para realizar operações matemáticas básicas com uma interface intuitiva e responsiva. Além de entregar uma lógica de cálculo precisa, o projeto também foca em boas práticas de UX e UI, mantendo uma experiência clara e agradável para o usuário.
