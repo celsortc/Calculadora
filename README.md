@@ -3,12 +3,18 @@
 <p align="center">Calculadora Web desenvolvida para solidificar conhecimentos de HTML, CSS e Javascript.</p>
 
 <p align="center">
+  <a href="#-tecnologias-Utilizadas">Tecnologias</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+  <a href="projeto">Projeto</a>
+</p>
+
+[Ir para Tecnologias](#tecnologias-utilizadas)
+
+<p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
 <p align="center"> 
-<img width="431" height="576" alt="image" src="https://github.com/user-attachments/assets/6acfc26a-8999-442a-990b-ef15a2affad7" />
-  
+<img width="1702" height="760" alt="Captura de tela 2025-11-16 224928" src="https://github.com/user-attachments/assets/c7ded52b-02f9-4004-b951-d5629caef92d" />
 </p>
 
 
@@ -17,7 +23,11 @@
 Este projeto é uma calculadora web moderna, desenvolvida para realizar operações matemáticas básicas com uma interface intuitiva e responsiva. Além de entregar uma lógica de cálculo precisa, o projeto também foca em boas práticas de UX e UI, mantendo uma experiência clara e agradável para o usuário.
 </p>
 
-<h2>✨ Funcionalidades</h2>
+<h2 id="#-projeto">💻 Projeto</h2>
+## 💻 Projeto
+<p>
+Este projeto é uma calculadora web moderna, desenvolvida para realizar operações matemáticas básicas com uma interface intuitiva e responsiva. Além de entregar uma lógica de cálculo precisa, o projeto também foca em boas práticas de UX e UI, mantendo uma experiência clara e agradável para o usuário.
+</p>
 
 <ul>
   <li>Operações básicas: soma (+), subtração (-), multiplicação (×) e divisão (÷).</li>
@@ -37,21 +47,18 @@ Este projeto é uma calculadora web moderna, desenvolvida para realizar operaç�
   </li>
 </ul>
 
-<h2>🎨 Design (UX/UI)</h2>
+
+<br><br><br>
+<p align="center" width="20px">
+  Além disso, o código do projeto foi desenvolvido para prevenir ao máximo possíveis erros de entrada por parte do usuário.
+</p>
+
+## 🛠️ Tecnologias Utilizadas
 
 <ul>
-  <li>Layout desenvolvido manualmente, seguindo princípios modernos de UX e UI Design;</li>
-  <li>Interface limpa, organizada e fácil de interpretar;</li>
-  <li>Botões com hierarquia visual clara e foco na usabilidade;</li>
-  <li>Responsividade pensada para diferentes tamanhos de tela.</li>
-</ul>
-
-<h2>🛠️ Tecnologias Utilizadas</h2>
-
-<ul>
-  <li><strong>HTML5</strong> → Estrutura da calculadora</li>
-  <li><strong>CSS3</strong> → Estilização, responsividade e design da interface</li>
-  <li><strong>JavaScript</strong> → Lógica de cálculo, eventos e manipulação dinâmica</li>
+  <li><strong>HTML5</strong></li>
+  <li><strong>CSS3</strong></li>
+  <li><strong>JavaScript</strong></li>
 </ul>
 
 </div>
