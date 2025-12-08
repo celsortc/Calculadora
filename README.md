@@ -22,9 +22,6 @@ Este projeto é uma calculadora web moderna, desenvolvida para realizar operaç�
 </p>
 
 ## 💻 Projeto
-<p>
-Este projeto é uma calculadora web moderna, desenvolvida para realizar operações matemáticas básicas com uma interface intuitiva e responsiva. Além de entregar uma lógica de cálculo precisa, o projeto também foca em boas práticas de UX e UI, mantendo uma experiência clara e agradável para o usuário.
-</p>
 
 <ul>
   <li>Operações básicas: soma (+), subtração (-), multiplicação (×) e divisão (÷).</li>
